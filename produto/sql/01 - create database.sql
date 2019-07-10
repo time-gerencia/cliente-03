@@ -18,8 +18,8 @@ CREATE TABLE public.cidade
 (
   codigo integer NOT NULL,
   nome character varying(60),
-  latitude decimal NOT NULL,
-  longitude decimal NOT NULL,
+  latitude integer NOT NULL,
+  longitude integer NOT NULL,
   CONSTRAINT pk PRIMARY KEY (codigo)
 )
 WITH (
