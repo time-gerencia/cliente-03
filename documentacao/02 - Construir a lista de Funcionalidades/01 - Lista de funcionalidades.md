@@ -4,9 +4,9 @@ Neste documento estão descritas as funcionalidades do projeto. Destando o que s
 
 | id  | Sistema    | Módulo   | Submodulo          |
 | --- | ---------- | -------- | ------------------ |
-| 1   | Cliente 01 | Cadastro | Input de longitude |
-| 2   | Cliente 01 | Cadastro | Input de latitude  |
-| 3   | Cliente 01 | Cadastro | Input de código    |
+| 1   | Cliente 03 | Cadastro | Input de longitude |
+| 2   | Cliente 03 | Cadastro | Input de latitude  |
+| 3   | Cliente 03 | Cadastro | Input de código    |
 
 ## Decomposição
 
