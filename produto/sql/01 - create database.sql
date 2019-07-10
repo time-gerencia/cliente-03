@@ -1,8 +1,8 @@
--- Database: gcdb
+-- Database: cli03
 
--- DROP DATABASE gcdb;
+-- DROP DATABASE cli03;
 
-CREATE DATABASE gcdb
+CREATE DATABASE cli03
   WITH OWNER = postgres
        ENCODING = 'UTF8'
        TABLESPACE = pg_default
@@ -18,6 +18,8 @@ CREATE TABLE public.cidade
 (
   codigo integer NOT NULL,
   nome character varying(60),
+  latitude decimal NOT NULL,
+  longitude decimal NOT NULL,
   CONSTRAINT pk PRIMARY KEY (codigo)
 )
 WITH (
