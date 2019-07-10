@@ -42,6 +42,8 @@ public class Cidade implements Serializable {
     @Column(name = "longitude")
     private long longitude;
 
+     private String error;
+    
     public Cidade() {
     }
 
@@ -79,6 +81,14 @@ public class Cidade implements Serializable {
 
     public void setLongitude(long longitude) {
         this.longitude = longitude;
+    }
+    
+     public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
     
     @Override

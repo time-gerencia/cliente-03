@@ -23,11 +23,12 @@ public class JsfCidade implements Serializable {
     public JsfCidade() {
     }
     
-    private int codigo;
+    private Integer codigo;
     private String nome;
     private long latitude;
     private long longitude;
-    
+    private String error;
+
     public int getCodigo() {
         return codigo;
     }
@@ -60,14 +61,33 @@ public class JsfCidade implements Serializable {
         this.longitude = longitude;
     }
     
+     public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+    
     public void persist(){
         br.data.entity.Cidade cid = new br.data.entity.Cidade();
-        cid.setCodigo(codigo);
+        
+        
+         try{
+            if(codigo == 0)
+            {
+              throw new Exception("Cidade não pode ter código 0.");  
+            }
+            cid.setCodigo(codigo);
         cid.setNome(nome);
         cid.setLatitude(latitude);
         cid.setLongitude(longitude);
-        
         new br.data.crud.CrudCidade().persist(cid);
+        }catch(Exception exp)
+        {
+            cid.setError(exp.getMessage());
+            this.setError(exp.getMessage());
+        }
     }
     
     public java.util.Collection<br.data.entity.Cidade> getAll(){
